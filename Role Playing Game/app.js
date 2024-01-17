@@ -118,6 +118,8 @@ function sellWeapon() {
         currentWeapon = inventory.shift();
         text.innerText = `You sold a ${currentWeapon}.`;
         text.innerText += ` In your inventory you have: ${inventory}`;
+    } else {
+        text.innerText = "You can't sell your only weapon!";
     }
 }
 
