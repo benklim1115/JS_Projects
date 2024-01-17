@@ -18,8 +18,7 @@ const monsterStats = document.querySelector("#monsterStats");
 const monsterName = document.querySelector("#monsterName");
 const monsterHealthText = document.querySelector("#monsterHealth");
 
-//Test commit
-
+//all our weapons
 const weapons = [
 {
     name: "stick",
@@ -38,6 +37,25 @@ const weapons = [
     power: 100  
 }];
 
+//all of our monsters
+const monsters = [
+{
+    name: "slime",
+    level: 2,
+    health: 15
+},
+{
+    name: "fanged beast",
+    level: 8,
+    health: 60
+},
+{
+    name: "dragon",
+    level: 20,
+    health: 300
+}];
+
+//all the locations we have and their functions 
 const locations = [
 {
     name: "town square",
@@ -76,7 +94,17 @@ function goCave() {
     update(locations[2]);
 }
 
-//actions
+function update(location) {
+    button1.innerText = location["button text"][0];
+    button2.innerText = location["button text"][1];
+    button3.innerText = location["button text"][2];
+    button1.onclick = location["button functions"][0];
+    button2.onclick = location["button functions"][1];
+    button3.onclick = location["button functions"][2];
+    text.innerText = location.text;
+}
+
+//store actions
 function buyHealth() {
     if(gold >= 10) {
         gold -= 10;
@@ -123,8 +151,14 @@ function sellWeapon() {
     }
 }
 
-function fightSlime() {
+//fighting monsters
+function goFight() {
 
+}
+
+function fightSlime() {
+    fighting = 0;
+    goFight();
 }
 
 function fightBeast() {
@@ -135,12 +169,3 @@ function fightDragon() {
     console.log("Fighting dragon.");
 }
 
-function update(location) {
-    button1.innerText = location["button text"][0];
-    button2.innerText = location["button text"][1];
-    button3.innerText = location["button text"][2];
-    button1.onclick = location["button functions"][0];
-    button2.onclick = location["button functions"][1];
-    button3.onclick = location["button functions"][2];
-    text.innerText = location.text;
-}
