@@ -159,7 +159,7 @@ function sellWeapon() {
 
 //fighting monsters and fighting actions
 function goFight() {
-
+    update(locations[3]);
 }
 
 function fightSlime() {
