@@ -159,10 +159,14 @@ function sellWeapon() {
 
 //fighting monsters and fighting actions
 function goFight() {
-    //alter the buttons to show we are fighting, assign the specific monster and display the monster stats
+    //alter the buttons to show we are fighting, 
+    //assign the specific monster and display the monster stats
     update(locations[3]);
     monsterHealth = monsters[fighting].health;
     monsterStats.style.display = "block";
+    //change the text for these id's to reflect whats in the monsters object
+    monsterName.innerText = monsters[fighting].name;
+    monsterHealthText.innerText = monsterHealth;
 }
 
 function fightSlime() {
