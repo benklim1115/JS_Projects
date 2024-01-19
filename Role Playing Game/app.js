@@ -184,11 +184,39 @@ function fightDragon() {
     goFight();
 }
 
+//break up into two functions so that we can separate the monster and person attacking?
 function attack() {
-    text.innerText = `The ${monsters[fighting].name} attacks.`;
-    text.innerText += " You attack it with your " + weapons[currentWeapon].name + ".";
+    //can we first declare the damage dealt outside the conditional?
+    let damageDealt = weapons[currentWeapon].power + Math.floor(Math.random() * xp) + 1;
+    //only allow this attack to happen if the monster has health left
+    if(monsterHealth >= 0) {
+        //see if we can stop the value going into the negative for attacking the monster
+        if(damageDealt > monsterHealth) {
+            text.innerText = `The ${monsters[fighting].name} attacks.`;
+            text.innerText += " You attack it with your " + weapons[currentWeapon].name + ".";
+            //make sure we can't continue to lose health after we win
+            if(monsterHealth !== 0) {
+                health -= monsters[fighting].level;
+            }
+            //subtract from monster health with weapon power, add random value times xp
+            monsterHealth = 0;
+            healthText.innerText = health;
+            monsterHealthText.innerText = monsterHealth;
+        } else {
+            text.innerText = `The ${monsters[fighting].name} attacks.`;
+            text.innerText += " You attack it with your " + weapons[currentWeapon].name + ".";
+            health -= monsters[fighting].level;
+            //subtract from monster health with weapon power, add random value times xp
+            monsterHealth -= damageDealt;
+            healthText.innerText = health;
+            monsterHealthText.innerText = monsterHealth;
+        }
+    }
 }
 
 function dodge() {
   
 }
+
+let rand = Math.floor(Math.random() * 5) + 1;
+console.log(rand);
