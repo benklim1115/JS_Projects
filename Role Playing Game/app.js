@@ -233,15 +233,17 @@ function attack() {
     } else if (monsterHealth <= 0) {
         defeatMonster();
     }
-  }
+}
 
 function dodge() {
-  
+    text.innerText = "You dodged the attack from the " + monsters[fighting].name;
+    console.log("Hello");
 }
 
 //end fight functions
 function defeatMonster() {
-
+    gold += Math.floor(monsters[fighting].level * 6.7);
+    xp += monsters[fighting].level;
 }
 
 function lose() {
