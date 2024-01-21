@@ -264,10 +264,10 @@ function attack() {
     }
 
     //see if our weapon breaks or not, pop the current weapon off inventory
-    if (Math.random() <= .1) {
-        return text.innerText += ` Your ${inventory.pop()} breaks.`;
+    if (Math.random() <= .1 && inventory.length !== 1) {
+        text.innerText += ` Your ${inventory.pop()} breaks.`;
+        currentWeapon--;
     }
-
 }
 
 //variance to monster's attack damage, monster level * 5 - our xp level. 
