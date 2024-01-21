@@ -243,19 +243,31 @@ function attack() {
     text.innerText = "The " + monsters[fighting].name + " attacks.";
     text.innerText += " You attack it with your " + weapons[currentWeapon].name + ".";
     health -= getMonsterAttackValue(monsters[fighting].level);
+
+    //did we hit the monster variance
     if (isMonsterHit()) {
         //subtract from monster health with weapon power, add random value times xp
         monsterHealth -= weapons[currentWeapon].power + Math.floor(Math.random() * xp) + 1;
     } else {
         text.innerText += " You miss!";
     }
+
     healthText.innerText = health;
     monsterHealthText.innerText = monsterHealth;
+
+    //check to see if our health is at 0 otherwise,
+    //check if we won the game or beat monster
     if (health <= 0) {
         lose();
     } else if (monsterHealth <= 0) {
         fighting === 2 ? winGame() : defeatMonster();
     }
+
+    //see if our weapon breaks or not, pop the current weapon off inventory
+    if (Math.random() <= .1) {
+        return text.innerText += ` Your ${inventory.pop()} breaks.`;
+    }
+
 }
 
 //variance to monster's attack damage, monster level * 5 - our xp level. 
