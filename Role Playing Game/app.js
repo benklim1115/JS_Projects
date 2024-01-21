@@ -125,7 +125,7 @@ function update(location) {
 
 //store actions
 function buyHealth() {
-    if(gold >= 10) {
+    if (gold >= 10) {
         gold -= 10;
         health += 10;
         goldText.innerText = gold;
@@ -137,9 +137,9 @@ function buyHealth() {
 
 function buyWeapon() {
     //check if we have the best weapon
-    if(currentWeapon < 3) {
+    if (currentWeapon < 3) {
         //check if the currentWeapon is less than the weapons index
-        if(currentWeapon < weapons.length - 1) {
+        if (currentWeapon < weapons.length - 1) {
             gold -= 30;
             currentWeapon++;
             let newWeapon = weapons[currentWeapon].name;
@@ -158,7 +158,7 @@ function buyWeapon() {
 }
 
 function sellWeapon() {
-    if(inventory.length > 1) {
+    if (inventory.length > 1) {
         gold += 15;
         goldText.innerText = gold;
         let currentWeapon;
@@ -244,9 +244,14 @@ function attack() {
     if (health <= 0) {
         lose();
     } else if (monsterHealth <= 0) {
-        defeatMonster();
+        if (fighting === 2) {
+            winGame();
+        } else {
+            defeatMonster();
+        }
     }
 }
+
 
 function dodge() {
     text.innerText = "You dodged the attack from the " + monsters[fighting].name;
