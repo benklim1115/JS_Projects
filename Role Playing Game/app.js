@@ -271,6 +271,10 @@ function dodge() {
     text.innerText = "You dodged the attack from the " + monsters[fighting].name;
 }
 
+function isMonsterHit() {
+    return Math.random() > .2 || health < 20;
+}
+
 //end fight functions
 //adds gold, xp and updates button text
 function defeatMonster() {
