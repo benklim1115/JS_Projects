@@ -252,7 +252,6 @@ function attack() {
     text.innerText = "The " + monsters[fighting].name + " attacks.";
     text.innerText += " You attack it with your " + weapons[currentWeapon].name + ".";
     health -= getMonsterAttackValue(monsters[fighting].level);
-
     //did we hit the monster variance
     if (isMonsterHit()) {
         //subtract from monster health with weapon power, add random value times xp
@@ -260,10 +259,8 @@ function attack() {
     } else {
         text.innerText += " You miss!";
     }
-
     healthText.innerText = health;
     monsterHealthText.innerText = monsterHealth;
-
     //check to see if our health is at 0 otherwise,
     //check if we won the game or beat monster
     if (health <= 0) {
@@ -271,7 +268,6 @@ function attack() {
     } else if (monsterHealth <= 0) {
         fighting === 2 ? winGame() : defeatMonster();
     }
-
     //see if our weapon breaks or not, pop the current weapon off inventory
     if (Math.random() <= .1 && inventory.length !== 1) {
         text.innerText += ` Your ${inventory.pop()} breaks.`;
@@ -333,7 +329,24 @@ function easterEgg() {
 }
 
 function pick(guess) {
-
+    const numbers = [];
+    while (numbers.length < 10) {
+        numbers.push(Math.floor(Math.random() * 11));
+    }
+    text.innerText = `You picked ${guess}. Here are the random numbers:\n`;
+    for (let i = 0; i < 10; i++) {
+        text.innerText += numbers[i] + "\n";
+    }
+    //is the number we chose in the numbers array?
+    if (numbers.includes(guess)) {
+        text.innerText += "Right! You win 20 gold!";
+        gold += 20;
+        goldText.innerText = gold;
+    } else {
+        text.innerText += "Wrong! You lose 10 health!";
+        health -= 10;
+        healthText.innerText = health;
+    }
 }
 
 function pickTwo(guess) {
