@@ -261,6 +261,19 @@ function lose() {
     update(locations[5]);
 }
 
+function restart() {
+    //restart the game with the original criteria
+    xp = 0;
+    health = 100;
+    gold = 50;
+    currentWeapon = 0;
+    inventory = ["stick"];
+    xpText.innerText = xp;
+    healthText.innerText = health;
+    goldText.innerText = gold;
+    goTown();
+}
+
 //test randomizer
 /*
 let rand = Math.floor(Math.random() * 5) + 1;
