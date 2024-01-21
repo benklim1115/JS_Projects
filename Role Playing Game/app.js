@@ -92,6 +92,12 @@ const locations = [
     "button text": ["REPLAY?", "REPLAY?", "REPLAY?"],
     "button functions": [restart, restart, restart],
     text: "You die. ☠️"
+},
+{
+    name: "win",
+    "button text": ["REPLAY?", "REPLAY?", "REPLAY?"],
+    "button functions": [restart, restart, restart],
+    text: "You defeated the dragon! YOU WIN THE GAME! 🎉"
 }];
 
 //initialize buttons
@@ -236,7 +242,7 @@ function attack() {
 function attack() {
     text.innerText = "The " + monsters[fighting].name + " attacks.";
     text.innerText += " You attack it with your " + weapons[currentWeapon].name + ".";
-    health -= monsters[fighting].level;
+    health -= getMonsterAttackValue(monsters[fighting].level);
     //subtract from monster health with weapon power, add random value times xp
     monsterHealth -= weapons[currentWeapon].power + Math.floor(Math.random() * xp) + 1;
     healthText.innerText = health;
@@ -248,6 +254,12 @@ function attack() {
     }
 }
 
+//variance to monster's attack damage, monster level * 5 - our xp level. 
+//as we get stronger the strength of their attacks should lessen
+function getMonsterAttackValue(level) {
+    const hit = (level * 5) - (Math.floor(Math.random() * xp));
+    console.log(hit);
+}
 
 function dodge() {
     text.innerText = "You dodged the attack from the " + monsters[fighting].name;
@@ -266,6 +278,10 @@ function defeatMonster() {
 
 function lose() {
     update(locations[5]);
+}
+
+function winGame() {
+    update(locations[6]);
 }
 
 function restart() {
