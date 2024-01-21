@@ -176,6 +176,7 @@ function sellWeapon() {
     }
 }
 
+//have picture show up here for monster? Pass into goFight function?
 //fighting monsters and fighting actions
 function goFight() {
     //alter the buttons to show we are fighting, 
@@ -188,6 +189,8 @@ function goFight() {
     monsterHealthText.innerText = monsterHealth;
 }
 
+//show picture of each monster when we fight them?
+//add audio snippets for each when they show up
 function fightSlime() {
     fighting = 0;
     goFight();
@@ -316,6 +319,14 @@ function restart() {
     healthText.innerText = health;
     goldText.innerText = gold;
     goTown();
+}
+
+function easterEgg() {
+    update(locations[7]);
+}
+
+function pick(guess) {
+
 }
 
 //test randomizer
