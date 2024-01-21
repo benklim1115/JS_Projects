@@ -209,7 +209,7 @@ function attack() {
         if(damageDealt > monsterHealth) {
             text.innerText = `The ${monsters[fighting].name} attacks.`;
             text.innerText += " You attack it with your " + weapons[currentWeapon].name + ".";
-            //make sure we can't continue to lose health after we win
+            //make sure we can't continue to lose health after we beat a monster
             if(monsterHealth !== 0) {
                 health -= monsters[fighting].level;
             }
@@ -244,11 +244,7 @@ function attack() {
     if (health <= 0) {
         lose();
     } else if (monsterHealth <= 0) {
-        if (fighting === 2) {
-            winGame();
-        } else {
-            defeatMonster();
-        }
+        fighting === 2 ? winGame() : defeatMonster();
     }
 }
 
