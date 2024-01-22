@@ -127,6 +127,7 @@ function goTown() {
     caveImage.style.display = "none";
     beastImage.style.display = "none";
     slimeImage.style.display = "none";
+    dragonImage.style.display = "none";
 }
 
 function goStore() {
@@ -136,6 +137,7 @@ function goStore() {
     caveImage.style.display = "none";
     beastImage.style.display = "none";
     slimeImage.style.display = "none";
+    dragonImage.style.display = "none";
 }
 
 function goCave() {
@@ -145,6 +147,7 @@ function goCave() {
     caveImage.style.display = "block";
     beastImage.style.display = "none";
     slimeImage.style.display = "none";
+    dragonImage.style.display = "none";
 }
 
 function update(location) {
@@ -223,16 +226,34 @@ function goFight() {
 function fightSlime() {
     fighting = 0;
     goFight();
+    shopImage.style.display = "none";
+    townImage.style.display = "none";
+    caveImage.style.display = "none";
+    beastImage.style.display = "none";
+    slimeImage.style.display = "block";
+    dragonImage.style.display = "none";
 }
 
 function fightBeast() {
     fighting = 1;
     goFight();
+    shopImage.style.display = "none";
+    townImage.style.display = "none";
+    caveImage.style.display = "none";
+    beastImage.style.display = "block";
+    slimeImage.style.display = "none";
+    dragonImage.style.display = "none";
 }
 
 function fightDragon() {
     fighting = 2;
     goFight();
+    shopImage.style.display = "none";
+    townImage.style.display = "none";
+    caveImage.style.display = "none";
+    beastImage.style.display = "none";
+    slimeImage.style.display = "none";
+    dragonImage.style.display = "block";
 }
 
 //break up into two functions so that we can separate the monster and person attacking?
