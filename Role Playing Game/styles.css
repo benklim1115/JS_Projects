@@ -11,7 +11,7 @@ body {
 #game {
     padding: 10px;
     max-width: 500px;
-    max-height: 400px;
+    max-height: 500px;
     background-color: #ffffff;
     color: #ffffff;
     margin-top: 30px;
@@ -48,4 +48,12 @@ button {
     background-color: #feac32;
     background-image: linear-gradient(#fecc4c, #ffac33);
     border: 3px solid #feac32;
+}
+
+#image div {
+    background-color: red;
+    width: 300px;
+    height: 300px;
+    margin: 10px auto;
+    display: none;
 }
