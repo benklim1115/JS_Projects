@@ -24,6 +24,7 @@ const shopImage = document.querySelector("#shop_image");
 const caveImage = document.querySelector("#cave_image");
 const beastImage = document.querySelector("#beast_image");
 const slimeImage = document.querySelector("#slime_image");
+const dragonImage = document.querySelector("#dragon_image");
 
 //all our weapons
 const weapons = [

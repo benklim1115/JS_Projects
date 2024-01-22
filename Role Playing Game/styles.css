@@ -59,6 +59,7 @@ button {
 #shop_image, 
 #cave_image,
 #beast_image,
-#slime_image {
+#slime_image,
+#dragon_image {
     display: none;
 }
