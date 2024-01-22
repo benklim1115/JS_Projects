@@ -18,7 +18,12 @@ const monsterStats = document.querySelector("#monsterStats");
 const monsterName = document.querySelector("#monsterName");
 const monsterHealthText = document.querySelector("#monsterHealth");
 
-const image = document.querySelector("#image");
+//all my images I will need
+const townImage = document.querySelector("#town_image");
+const shopImage = document.querySelector("#shop_image");
+const caveImage = document.querySelector("#cave_image");
+const beastImage = document.querySelector("#beast_image");
+const slimeImage = document.querySelector("#slime_image");
 
 //all our weapons
 const weapons = [
@@ -116,14 +121,29 @@ button3.onclick = fightDragon;
 //locations
 function goTown() {
     update(locations[0]);
+    shopImage.style.display = "none";
+    townImage.style.display = "block";
+    caveImage.style.display = "none";
+    beastImage.style.display = "none";
+    slimeImage.style.display = "none";
 }
 
 function goStore() {
     update(locations[1]);
+    shopImage.style.display = "block";
+    townImage.style.display = "none";
+    caveImage.style.display = "none";
+    beastImage.style.display = "none";
+    slimeImage.style.display = "none";
 }
 
 function goCave() {
     update(locations[2]);
+    shopImage.style.display = "none";
+    townImage.style.display = "none";
+    caveImage.style.display = "block";
+    beastImage.style.display = "none";
+    slimeImage.style.display = "none";
 }
 
 function update(location) {
@@ -361,6 +381,19 @@ function pickTwo(guess) {
 
 function pickEight(guess) {
     pick(8);
+}
+
+//Image change functionality
+//not working yet, can I hide others dynamically and show specific one through param?
+function changeImage(newImageSource) {
+    image.src = newImageSource;
+    /*
+    townImage.style.display = "none";
+    shopImage.style.display = "none";
+    caveImage.style.display = "none";
+    slimeImage.style.display = "none";
+    beastImage.style.display = "none";
+    */
 }
 
 //test randomizer

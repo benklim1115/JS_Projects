@@ -50,10 +50,15 @@ button {
     border: 3px solid #feac32;
 }
 
-#image div {
-    background-color: red;
+#image {
     width: 300px;
     height: 300px;
     margin: 10px auto;
+}
+
+#shop_image, 
+#cave_image,
+#beast_image,
+#slime_image {
     display: none;
 }
