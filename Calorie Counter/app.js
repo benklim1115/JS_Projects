@@ -10,12 +10,16 @@ let isError = false;
 //convert user input to number 
 function cleanInputString(str) {
     //use regex instead to help with memory and runtime performance
+    //check for character set of +, - or a space globally
     const regex = /[+-\s]/g;
     return str.replace(regex, '');
 }
 
 function isInvalidInput(str) {
-
+    //check for the letter e case-insensitive as exponent between any digit
+    //check for the pattern one or more times
+    const regex = /\d+e\d+/i;
+    return str.match(regex);
 }
 
 
