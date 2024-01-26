@@ -10,7 +10,8 @@ let isError = false;
 //convert user input to number 
 function cleanInputString(str) {
     //use regex instead to help with memory and runtime performance
-    const regex = /hello/;
+    const regex = /[+-\s]/g;
+    return str.replace(regex, '');
     /*
     const strArr = str.split('');
     const cleanStrArr = [];
