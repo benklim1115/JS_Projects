@@ -12,21 +12,10 @@ function cleanInputString(str) {
     //use regex instead to help with memory and runtime performance
     const regex = /[+-\s]/g;
     return str.replace(regex, '');
-    /*
-    const strArr = str.split('');
-    const cleanStrArr = [];
-
-    //check for characters we don't want
-
-    const badValues = ["+", "-", " "];
-    for (let i = 0; i < strArr.length; i++) {
-        if (!badValues.includes(strArr[i])) {
-            cleanStrArr.push(strArr[i]);
-        } 
-    }
-
-    const joinedArr = cleanStrArr.join("");
-
-    return joinedArr;
-    */
 }
+
+function isInvalidInput(str) {
+
+}
+
+
