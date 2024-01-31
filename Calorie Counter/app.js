@@ -27,5 +27,8 @@ function isInvalidInput(str) {
 function addEntry() {
     //use the dropdown value with the .input-container class to get our specific input we need
     const targetInputContainer = document.querySelector(`#${entryDropdown.value} .input-container`);
+    //grab all of our text inputs, return a nodelist to track number of entries
+    const entryNumber = targetInputContainer.querySelectorAll('input[type="text"]').length;
+    const HTMLString = `<label>Entry ${entryNumber} Name</label>`;
 }
 
