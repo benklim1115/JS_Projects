@@ -25,5 +25,7 @@ function isInvalidInput(str) {
 //concatenating # sign to value of entryDropdown list
 //this will assign an the value as the corresponding ID in our list
 function addEntry() {
-    const targetID = `#${entryDropdown.value}`;
+    //use the dropdown value with the .input-container class to get our specific input we need
+    const targetInputContainer = document.querySelector(`#${entryDropdown.value} .input-container`);
 }
+
