@@ -22,4 +22,8 @@ function isInvalidInput(str) {
     return str.match(regex);
 }
 
-
+//concatenating # sign to value of entryDropdown list
+//this will assign an the value as the corresponding ID in our list
+function addEntry() {
+    const targetID = `#${entryDropdown.value}`;
+}
