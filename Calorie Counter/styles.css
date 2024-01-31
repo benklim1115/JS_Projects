@@ -99,3 +99,11 @@
   .deficit {
     color: var(--light-pink);
   }
+
+/* Commenting out text field background color for now
+  input[type="text"], textarea{
+    background-color: #1b1b32;
+    color: white;
+  }
+*/
+  
