@@ -36,7 +36,9 @@ function addEntry() {
     <label for="${entryDropdown.value}-${entryNumber}-calories">Entry ${entryNumber} Calories</label>
     <input type="number" min="0" placeholder="Calories" id="${entryDropdown.value}-${entryNumber}-calories">`;
 
-    targetInputContainer.innerHTML += HTMLString;
+    //takes two arguments: 
+    //string to specify position of inserted element, string containing HTML to be inserted
+    targetInputContainer.insertAdjacentHTML("beforeend", HTMLString);
 }
 
 
