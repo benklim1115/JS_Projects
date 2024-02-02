@@ -41,8 +41,12 @@ function addEntry() {
     targetInputContainer.insertAdjacentHTML("beforeend", HTMLString);
 }
 
-
-
 //adding event listener for button, passing function as reference to run on click
 addEntryButton.addEventListener('click', addEntry);
+
+
+//get calorie count from user entries
+function getCaloriesFromInputs(list) {
+
+}
 
