@@ -29,7 +29,8 @@ function addEntry() {
     const targetInputContainer = document.querySelector(`#${entryDropdown.value} .input-container`);
     //grab all of our text inputs, return a nodelist to track number of entries
     const entryNumber = targetInputContainer.querySelectorAll('input[type="text"]').length;
-    const HTMLString = `<label for="${entryDropdown.value}-${entryNumber}-name">Entry ${entryNumber} Name</label>`;
+    const HTMLString = `<label for="${entryDropdown.value}-${entryNumber}-name">Entry ${entryNumber} Name</label> 
+    <input type="text" placeholder="Name" id="${entryDropdown.value}-${entryNumber}-name">`;
 
 }
 
