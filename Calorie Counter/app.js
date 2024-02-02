@@ -28,7 +28,7 @@ function addEntry() {
     //use the dropdown value with the .input-container class to get our specific input we need
     const targetInputContainer = document.querySelector(`#${entryDropdown.value} .input-container`);
     //grab all of our text inputs, return a nodelist to track number of entries
-    const entryNumber = targetInputContainer.querySelectorAll('input[type="text"]').length;
+    const entryNumber = targetInputContainer.querySelectorAll('input[type="text"]').length + 1;
     //dynamically create labels and inputs for the name and calories of each meal added
     const HTMLString = 
     `<label for="${entryDropdown.value}-${entryNumber}-name">Entry ${entryNumber} Name</label> 
@@ -38,6 +38,8 @@ function addEntry() {
 
     targetInputContainer.innerHTML += HTMLString;
 }
+
+
 
 //adding event listener for button, passing function as reference to run on click
 addEntryButton.addEventListener('click', addEntry);
