@@ -39,3 +39,6 @@ function addEntry() {
     targetInputContainer.innerHTML += HTMLString;
 }
 
+//adding event listener for button, passing function as reference to run on click
+addEntryButton.addEventListener('click', addEntry);
+
