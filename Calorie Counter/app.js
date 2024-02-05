@@ -67,3 +67,11 @@ function getCaloriesFromInputs(list) {
     return calories;
 }
 
+//event listener function, attaching to submit event
+function calculateCalories(e) {
+    preventDefault(e);
+    isError = false;
+
+    let breakfastNumberInputs = document.querySelectorAll('#breakfast input[type=number]');
+}
+
