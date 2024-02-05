@@ -22,8 +22,7 @@ function isInvalidInput(str) {
     return str.match(regex);
 }
 
-//concatenating # sign to value of entryDropdown list
-//this will assign an the value as the corresponding ID in our list
+//concatenating # sign to value of entryDropdown list, assigning value as ID
 function addEntry() {
     //use the dropdown value with the .input-container class to get our specific input we need
     const targetInputContainer = document.querySelector(`#${entryDropdown.value} .input-container`);
@@ -47,6 +46,10 @@ addEntryButton.addEventListener('click', addEntry);
 
 //get calorie count from user entries
 function getCaloriesFromInputs(list) {
+    let calories = 0;
 
+    for (let i = 0; i < list.length; i++) {
+
+    }
 }
 
