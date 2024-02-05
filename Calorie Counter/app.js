@@ -44,6 +44,7 @@ addEntryButton.addEventListener('click', addEntry);
 
 
 //get calorie count from user entries
+//we can probably create a new section on the page for the error instead of an alert
 function getCaloriesFromInputs(list) {
     let calories = 0;
 
