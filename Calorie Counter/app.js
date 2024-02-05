@@ -54,9 +54,10 @@ function getCaloriesFromInputs(list) {
         let badInputs = isInvalidInput(currVal);
 
         //if we have bad inputs display this to the user,
-        //Refactor: instead can we just display the value as red like an error?
         if (badInputs) {
             alert(`Invalid Input: ${badInputs[0]}`);
+            isError = true;
+            return null;
         }
     }
 }
