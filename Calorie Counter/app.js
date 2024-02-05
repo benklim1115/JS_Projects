@@ -48,10 +48,17 @@ addEntryButton.addEventListener('click', addEntry);
 function getCaloriesFromInputs(list) {
     let calories = 0;
 
+    //loop through nodelist of inputs, clean inputs, filter out bad inputs
     for (let i = 0; i < list.length; i++) {
         let currVal = list[i].value;
         currVal = cleanInputString(list[i].value);
+        let badInputs = isInvalidInput(currVal);
 
+        //if we have bad inputs display this to the user,
+        //Refactor: instead can we just display the value as red like an error?
+        if (badInputs) {
+
+        }
     }
 }
 
