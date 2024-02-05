@@ -7,7 +7,6 @@ const output = document.getElementById('output');
 let isError = false;
 
 
-//convert user input to number 
 function cleanInputString(str) {
     //use regex instead to help with memory and runtime performance
     //check for character set of +, - or a space globally
@@ -57,7 +56,7 @@ function getCaloriesFromInputs(list) {
         //if we have bad inputs display this to the user,
         //Refactor: instead can we just display the value as red like an error?
         if (badInputs) {
-
+            alert(`Invalid Input: ${badInputs[0]}`);
         }
     }
 }
