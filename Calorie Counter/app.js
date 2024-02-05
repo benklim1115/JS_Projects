@@ -52,7 +52,7 @@ function getCaloriesFromInputs(list) {
         let currVal = list[i].value;
         currVal = cleanInputString(list[i].value);
         let badInputs = isInvalidInput(currVal);
-
+        console.log(currVal);
         //if we have bad inputs display this to the user,
         if (badInputs) {
             alert(`Invalid Input: ${badInputs[0]}`);
@@ -61,6 +61,9 @@ function getCaloriesFromInputs(list) {
         }
 
         calories += Number(currVal);
+        console.log(`Calorie Count: ${calories}`);
     }
+
+    return calories;
 }
 
