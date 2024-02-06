@@ -105,7 +105,7 @@ function calculateCalories(e) {
     //create our HTML string to display the output
     //surplusOrDeficit to lowercase to assign class characteristics for if its truthy or falsy
     output.innerHTML = 
-    `<span class="${surplusOrDeficit.toLowerCase()}">${remainingCalories} Calorie ${surplusOrDeficit}</span>
+    `<span class="${surplusOrDeficit.toLowerCase()}">${Math.abs(remainingCalories)} Calorie ${surplusOrDeficit}</span>
     `;
 
 }
