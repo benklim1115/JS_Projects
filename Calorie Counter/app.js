@@ -106,6 +106,10 @@ function calculateCalories(e) {
     //surplusOrDeficit to lowercase to assign class characteristics for if its truthy or falsy
     output.innerHTML = 
     `<span class="${surplusOrDeficit.toLowerCase()}">${Math.abs(remainingCalories)} Calorie ${surplusOrDeficit}</span>
+    <hr />
+    <p>${budgetCalories} Calories Budgeted</p>
+    <p>${consumedCalories} Calories Consumed</p>
+    <p>${exerciseCalories} Calories Burned</p>
     `;
 
 }
