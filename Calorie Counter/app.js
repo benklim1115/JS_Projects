@@ -21,6 +21,7 @@ function isInvalidInput(str) {
     return str.match(regex);
 }
 
+
 //concatenating # sign to value of entryDropdown list, assigning value as ID
 function addEntry() {
     //use the dropdown value with the .input-container class to get our specific input we need
@@ -41,6 +42,7 @@ function addEntry() {
 
 //adding event listener for button, passing function as reference to run on click
 addEntryButton.addEventListener('click', addEntry);
+
 
 
 //get calorie count from user entries
@@ -67,6 +69,7 @@ function getCaloriesFromInputs(list) {
 
     return calories;
 }
+
 
 //event listener function, attaching to submit event
 function calculateCalories(e) {
@@ -100,7 +103,10 @@ function calculateCalories(e) {
     const surplusOrDeficit = remainingCalories < 0 ? "Surplus" : "Deficit";
 
     //create our HTML string to display the output
-    
+    //surplusOrDeficit to lowercase to assign class characteristics for if its truthy or falsy
+    output.innerHTML = 
+    `<span class="${surplusOrDeficit.toLowerCase()}">${remainingCalories} Calorie ${surplusOrDeficit}</span>
+    `;
 
 }
 
