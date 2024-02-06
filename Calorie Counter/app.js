@@ -92,7 +92,15 @@ function calculateCalories(e) {
         return;
     }
 
+    //calculate calories
     const consumedCalories = breakfastCalories + lunchCalories + dinnerCalories + snacksCalories;
     const remainingCalories = (budgetCalories - consumedCalories) + exerciseCalories;
+
+    //check if user is in caloric surplus or deficit
+    const surplusOrDeficit = remainingCalories < 0 ? "Surplus" : "Deficit";
+
+    //create our HTML string to display the output
+    
+
 }
 
