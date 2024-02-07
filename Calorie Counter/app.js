@@ -37,8 +37,6 @@ function addEntry() {
     targetInputContainer.insertAdjacentHTML("beforeend", HTMLString);
 }
 
-addEntryButton.addEventListener('click', addEntry);
-
 
 function getCaloriesFromInputs(list) {
     let calories = 0;
@@ -62,11 +60,9 @@ function getCaloriesFromInputs(list) {
     return calories;
 }
 
-calorieCounter.addEventListener("submit", calculateCalories);
-
 
 function calculateCalories(e) {
-    preventDefault(e);
+    e.preventDefault();
     isError = false;
 
     //track all of our inputs to be calculated
@@ -116,5 +112,8 @@ function clearForm() {
     budgetNumberInput.value = "";
     output.innerText = "";
     output.classList.add("hide");
-    clearButton.addEventListener("click", clearForm);
 }
+
+addEntryButton.addEventListener('click', addEntry);
+calorieCounter.addEventListener("submit", calculateCalories);
+clearButton.addEventListener("click", clearForm);
