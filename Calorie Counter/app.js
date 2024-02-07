@@ -117,3 +117,7 @@ function calculateCalories(e) {
     output.classList.remove("hide");
 }
 
+
+function clearForm() {
+    
+}
