@@ -6,17 +6,14 @@ const clearButton = document.getElementById('clear');
 const output = document.getElementById('output');
 let isError = false;
 
-
+//check for character set of +, - or a space globally
 function cleanInputString(str) {
-    //use regex instead to help with memory and runtime performance
-    //check for character set of +, - or a space globally
     const regex = /[+-\s]/g;
     return str.replace(regex, '');
 }
 
+//check for the letter e case-insensitive as exponent between any digit, check for one or more times
 function isInvalidInput(str) {
-    //check for the letter e case-insensitive as exponent between any digit
-    //check for the pattern one or more times
     const regex = /\d+e\d+/i;
     return str.match(regex);
 }
@@ -40,24 +37,18 @@ function addEntry() {
     targetInputContainer.insertAdjacentHTML("beforeend", HTMLString);
 }
 
-//adding event listener for button, passing function as reference to run on click
 addEntryButton.addEventListener('click', addEntry);
 
 
-
-//get calorie count from user entries
-//we can probably create a new section on the page for the error instead of an alert
 function getCaloriesFromInputs(list) {
     let calories = 0;
 
-    //loop through nodelist of inputs, clean inputs, filter out bad inputs
     for (let i = 0; i < list.length; i++) {
         let currVal = list[i].value;
         currVal = cleanInputString(list[i].value);
         let badInputs = isInvalidInput(currVal);
         console.log(currVal);
 
-        //if we have bad inputs display this to the user,
         if (badInputs) {
             alert(`Invalid Input: ${badInputs[0]}`);
             isError = true;
@@ -71,10 +62,9 @@ function getCaloriesFromInputs(list) {
     return calories;
 }
 
-//adding event listener to run on submit
 calorieCounter.addEventListener("submit", calculateCalories);
 
-//event listener function, attaching to submit event
+
 function calculateCalories(e) {
     preventDefault(e);
     isError = false;
@@ -85,7 +75,6 @@ function calculateCalories(e) {
     const dinnerNumberInputs = document.querySelectorAll('#dinner input[type=number]');
     const snacksNumberInputs = document.querySelectorAll('#snacks input[type=number]');
     const exerciseNumberInputs = document.querySelectorAll('#exercise input[type=number]');
-
     //run all inputs through function to get calories from them
     const breakfastCalories = getCaloriesFromInputs(breakfastNumberInputs);
     const lunchCalories = getCaloriesFromInputs(lunchNumberInputs);
@@ -101,7 +90,6 @@ function calculateCalories(e) {
     //calculate calories
     const consumedCalories = breakfastCalories + lunchCalories + dinnerCalories + snacksCalories;
     const remainingCalories = (budgetCalories - consumedCalories) + exerciseCalories;
-
     //check if user is in caloric surplus or deficit
     const surplusOrDeficit = remainingCalories < 0 ? "Surplus" : "Deficit";
 
@@ -119,5 +107,5 @@ function calculateCalories(e) {
 
 
 function clearForm() {
-    
+    const inputContainers = Array.from(document.querySelectorAll(".input-container"));
 }
