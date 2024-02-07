@@ -28,6 +28,7 @@ function addEntry() {
     const targetInputContainer = document.querySelector(`#${entryDropdown.value} .input-container`);
     //grab all of our text inputs, return a nodelist to track number of entries
     const entryNumber = targetInputContainer.querySelectorAll('input[type="text"]').length + 1;
+
     //dynamically create labels and inputs for the name and calories of each meal added
     const HTMLString = 
     `<label for="${entryDropdown.value}-${entryNumber}-name">Entry ${entryNumber} Name</label> 
@@ -35,7 +36,6 @@ function addEntry() {
     <label for="${entryDropdown.value}-${entryNumber}-calories">Entry ${entryNumber} Calories</label>
     <input type="number" min="0" placeholder="Calories" id="${entryDropdown.value}-${entryNumber}-calories">`;
 
-    //takes two arguments: 
     //string to specify position of inserted element, string containing HTML to be inserted
     targetInputContainer.insertAdjacentHTML("beforeend", HTMLString);
 }
@@ -56,6 +56,7 @@ function getCaloriesFromInputs(list) {
         currVal = cleanInputString(list[i].value);
         let badInputs = isInvalidInput(currVal);
         console.log(currVal);
+
         //if we have bad inputs display this to the user,
         if (badInputs) {
             alert(`Invalid Input: ${badInputs[0]}`);
@@ -70,6 +71,8 @@ function getCaloriesFromInputs(list) {
     return calories;
 }
 
+//adding event listener to run on submit
+calorieCounter.addEventListener("submit", calculateCalories);
 
 //event listener function, attaching to submit event
 function calculateCalories(e) {
@@ -102,7 +105,6 @@ function calculateCalories(e) {
     //check if user is in caloric surplus or deficit
     const surplusOrDeficit = remainingCalories < 0 ? "Surplus" : "Deficit";
 
-    //create our HTML string to display the output
     //surplusOrDeficit to lowercase to assign class characteristics for if its truthy or falsy
     output.innerHTML = 
     `<span class="${surplusOrDeficit.toLowerCase()}">${Math.abs(remainingCalories)} Calorie ${surplusOrDeficit}</span>
