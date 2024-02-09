@@ -80,3 +80,11 @@ const allSongs = [
 
 //setting up Web Audio API
 const audio = new Audio();
+
+let userData = {
+    songs: [...allSongs],
+    currentSong: null,
+    songCurrentTime: 0
+};
+
+const renderSongs = (array) => {}; 
