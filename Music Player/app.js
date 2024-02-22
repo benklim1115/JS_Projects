@@ -108,7 +108,17 @@ const renderSongs = (array) => {
   playlistSongs.innerHTML = songsHTML;
 };
 
+//lets sort the songs in alphabetical order
+userData?.songs.sort((a, b) => {
+	if (a.title < b.title) {
+		return -1;
+	}
 
-userData?.songs.sort();
+	if (a.title > b.title) {
+		return 1;
+	}
+
+	return 0;
+});
 
 renderSongs(userData?.songs);
