@@ -125,4 +125,6 @@ renderSongs(userData?.songs);
 
 
 //playing the displayed songs
-const playSong = (id) => {};
+const playSong = (id) => {
+	const song = userData?.songs.find((song) => song.id === id);
+};
