@@ -141,3 +141,9 @@ const playSong = (id) => {
 	playButton.classList.add("playing");
 	audio.play();
 };
+
+playButton.addEventListener("click", () => {
+	if (!userData?.currentSong) {
+		playSong(userData?.songs[0].id);
+	}
+});
