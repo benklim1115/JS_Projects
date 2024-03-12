@@ -149,3 +149,11 @@ playButton.addEventListener("click", () => {
 		playSong(userData?.currentSong.id);
 	}
 });
+
+
+//pausing the current song
+const pauseSong = () => {
+	userData.songCurrentTime = audio.currentTime;
+	playButton.classList.remove("playing");
+	audio.pause();
+};
