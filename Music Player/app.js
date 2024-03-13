@@ -157,3 +157,9 @@ const pauseSong = () => {
 	playButton.classList.remove("playing");
 	audio.pause();
 };
+
+pauseButton.addEventListener("click", pauseSong);
+
+
+//get index of each song
+const getCurrentSongIndex = () => {};
