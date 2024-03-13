@@ -161,5 +161,14 @@ const pauseSong = () => {
 pauseButton.addEventListener("click", pauseSong);
 
 
-//get index of each song
-const getCurrentSongIndex = () => {};
+//get index of song
+const getCurrentSongIndex = () => {
+	return userData?.songs.indexOf(userData?.currentSong);
+}
+
+
+//play the next song
+
+
+
+//play the previous song
