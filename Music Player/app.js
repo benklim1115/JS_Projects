@@ -168,7 +168,8 @@ const getCurrentSongIndex = () => {
 
 
 //play the next song
-
+const playNextSong = () => {};
 
 
 //play the previous song
+const playPreviousSong = () => {};
