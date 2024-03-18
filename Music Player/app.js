@@ -168,7 +168,12 @@ const getCurrentSongIndex = () => {
 
 
 //play the next song
-const playNextSong = () => {};
+const playNextSong = () => {
+	//check if there is song playing in userData Object
+	if(userData?.currentSong === null) {
+		playSong(userData?.songs[0].id);
+	}
+};
 
 
 //play the previous song
