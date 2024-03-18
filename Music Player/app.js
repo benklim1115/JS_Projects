@@ -141,7 +141,6 @@ const playSong = (id) => {
 	playButton.classList.add("playing");
 	audio.play();
 };
-
 playButton.addEventListener("click", () => {
 	if (!userData?.currentSong) {
 		playSong(userData?.songs[0].id);
@@ -157,7 +156,6 @@ const pauseSong = () => {
 	playButton.classList.remove("playing");
 	audio.pause();
 };
-
 pauseButton.addEventListener("click", pauseSong);
 
 
@@ -179,7 +177,7 @@ const playNextSong = () => {
 		playSong(nextSong.id);
 	}
 };
-
+nextButton.addEventListener("click", playNextSong);
 
 //play the previous song
 const playPreviousSong = () => {};
