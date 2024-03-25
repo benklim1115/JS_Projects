@@ -110,17 +110,21 @@ const renderSongs = (array) => {
 };
 
 //lets sort the songs in alphabetical order
-userData?.songs.sort((a, b) => {
-	if (a.title < b.title) {
-		return -1;
-	}
-
-	if (a.title > b.title) {
-		return 1;
-	}
-
-	return 0;
-});
+const sortSongs = () => {
+	userData?.songs.sort((a,b) => {
+	  	if (a.title < b.title) {
+			return -1;
+	  	}
+  
+	  	if (a.title > b.title) {
+			return 1;
+	  	}
+  
+	  	return 0;
+	});
+  
+	return userData?.songs;
+};
 renderSongs(userData?.songs);
 
 
