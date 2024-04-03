@@ -183,6 +183,7 @@ const playNextSong = () => {
 };
 nextButton.addEventListener("click", playNextSong);
 
+
 //play the previous song
 const playPreviousSong = () => {
 	// no current song just return, otherwise keep track of current song
@@ -192,3 +193,4 @@ const playPreviousSong = () => {
 		const currentSongIndex = getCurrentSongIndex();
 	}
 };
+previousButton.addEventListener("click", playPreviousSong);
