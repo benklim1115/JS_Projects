@@ -211,3 +211,6 @@ const highlightCurrentSong = () => {
 		songToHighlight.setAttribute("aria-current", "true");
 	}
 };
+
+//display current song title, artist in player display
+const setPlayerDisplay = () => {};
