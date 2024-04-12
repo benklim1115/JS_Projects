@@ -218,4 +218,8 @@ const setPlayerDisplay = () => {
 	const songArtist = document.getElementById("player-song-artist");
 	const currentTitle = userData?.currentSong?.title;
 	const currentArtist = userData?.currentSong?.artist;
+
+	//check if currentTitle and currentArtist are truthy values, set the textContent to that then
+	playingSong.textContent = currentTitle ? currentTitle : '';
+	songArtist.textContent = currentArtist ? currentArtist : '';
 };
