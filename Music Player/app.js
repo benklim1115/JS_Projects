@@ -213,4 +213,7 @@ const highlightCurrentSong = () => {
 };
 
 //display current song title, artist in player display
-const setPlayerDisplay = () => {};
+const setPlayerDisplay = () => {
+	const playingSong = document.getElementById("player-song-title");
+	const songArtist = document.getElementById("player-song-artist");
+};
