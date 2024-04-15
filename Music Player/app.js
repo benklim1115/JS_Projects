@@ -144,6 +144,7 @@ const playSong = (id) => {
 	userData.currentSong = song; 
 	playButton.classList.add("playing");
 	highlightCurrentSong();
+	setPlayerDisplay();
 	audio.play();
 };
 playButton.addEventListener("click", () => {
