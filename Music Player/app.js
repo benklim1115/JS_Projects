@@ -213,6 +213,7 @@ const highlightCurrentSong = () => {
 	}
 };
 
+
 //display current song title, artist in player display
 const setPlayerDisplay = () => {
 	const playingSong = document.getElementById("player-song-title");
@@ -224,3 +225,7 @@ const setPlayerDisplay = () => {
 	playingSong.textContent = currentTitle ? currentTitle : '';
 	songArtist.textContent = currentArtist ? currentArtist : '';
 };
+
+
+//setting the initial display to be the first song in the list
+const setPlayButtonAccessibleText = () => {};
