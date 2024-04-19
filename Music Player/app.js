@@ -239,5 +239,10 @@ const setPlayButtonAccessibleText = () => {
 const shuffle = () => {
 	userData?.songs.sort(() => Math.random() - 0.5);
 	userData.currentSong = null;
-	userData.songCurrentTime = 0;  
+	userData.songCurrentTime = 0;
+	//Need to reset the defaults for a new song
+	renderSongs(userData?.songs);
+	pauseSong();
+	setPlayerDisplay();
+	setPlayButtonAccessibleText();  
 };
