@@ -247,3 +247,7 @@ const shuffle = () => {
 	setPlayButtonAccessibleText();  
 };
 shuffleButton.addEventListener("click", shuffle);
+
+
+//delete song
+const deleteSong = (id) => {};
