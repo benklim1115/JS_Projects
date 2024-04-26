@@ -253,4 +253,7 @@ shuffleButton.addEventListener("click", shuffle);
 const deleteSong = (id) => {
 	//filter out the song who's id we pass in the delete function
 	userData.songs = userData?.songs.filter((song) => song.id !== id);
+	renderSongs(userData?.songs);
+	highlightCurrentSong();
+	setPlayButtonAccessibleText();
 };
