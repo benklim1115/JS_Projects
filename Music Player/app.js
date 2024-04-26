@@ -250,4 +250,7 @@ shuffleButton.addEventListener("click", shuffle);
 
 
 //delete song
-const deleteSong = (id) => {};
+const deleteSong = (id) => {
+	//filter out the song who's id we pass in the delete function
+	userData.songs = userData?.songs.filter((song) => song.id !== id);
+};
