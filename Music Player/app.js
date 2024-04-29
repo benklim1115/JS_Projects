@@ -263,4 +263,9 @@ const deleteSong = (id) => {
 	renderSongs(userData?.songs);
 	highlightCurrentSong();
 	setPlayButtonAccessibleText();
+
+	//check if songs length is 0, then create reset button
+	if(userData?.songs.length === 0) {
+
+	}
 };
