@@ -273,5 +273,10 @@ const deleteSong = (id) => {
 
 		resetButton.appendChild(resetText);
 		playlistSongs.appendChild(resetButton);
+
+		//adding event listener to reset songs with reset button
+		resetButton.addEventListener("click", () => {
+			userData.songs = [...allSongs];
+		} );
 	}
 };
