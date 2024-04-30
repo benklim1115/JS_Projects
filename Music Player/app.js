@@ -283,3 +283,9 @@ const deleteSong = (id) => {
 		} );
 	}
 };
+
+//helps to play next song when the current one ends, checks if next song exists
+audio.addEventListener("ended", () => {
+	const currentSongIndex = getCurrentSongIndex();
+	const nextSongExists = userData.songs.length - 1 > currentSongIndex ? true : false;
+});
